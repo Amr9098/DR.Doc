@@ -1,0 +1,11 @@
+{
+    "name": "Assistant",
+    "alias": "assistant",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Assistant\\Providers\\AssistantServiceProvider"
+    ],
+    "files": []
+}

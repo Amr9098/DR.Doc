@@ -1,0 +1,7 @@
+{
+    "User": true,
+    "Doctor": true,
+    "Assistant": true,
+    "Patient": true,
+    "Specialization": true
+}
