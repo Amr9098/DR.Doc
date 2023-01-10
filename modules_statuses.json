@@ -3,5 +3,6 @@
     "Doctor": true,
     "Assistant": true,
     "Patient": true,
-    "Specialization": true
+    "Specialization": true,
+    "Clinic": true
 }

@@ -182,6 +182,7 @@ class ComposerStaticInit5947e519b465a0a5e1ca02b706ec90ef
         'A' => 
         array (
             'App\\' => 4,
+            'AndreasElia\\PostmanGenerator\\' => 29,
         ),
     );
 
@@ -550,6 +551,10 @@ class ComposerStaticInit5947e519b465a0a5e1ca02b706ec90ef
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
+        'AndreasElia\\PostmanGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andreaselia/laravel-api-to-postman/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -563,6 +568,8 @@ class ComposerStaticInit5947e519b465a0a5e1ca02b706ec90ef
     );
 
     public static $classMap = array (
+        'AndreasElia\\PostmanGenerator\\Commands\\ExportPostmanCommand' => __DIR__ . '/..' . '/andreaselia/laravel-api-to-postman/src/Commands/ExportPostmanCommand.php',
+        'AndreasElia\\PostmanGenerator\\PostmanGeneratorServiceProvider' => __DIR__ . '/..' . '/andreaselia/laravel-api-to-postman/src/PostmanGeneratorServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -578,6 +585,8 @@ class ComposerStaticInit5947e519b465a0a5e1ca02b706ec90ef
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Assistant' => __DIR__ . '/../..' . '/app/Models/Assistant.php',
+        'App\\Models\\Clinic' => __DIR__ . '/../..' . '/app/Models/Clinic.php',
         'App\\Models\\ClinicDoctors' => __DIR__ . '/../..' . '/app/Models/ClinicDoctors.php',
         'App\\Models\\Doctor' => __DIR__ . '/../..' . '/app/Models/Doctor.php',
         'App\\Models\\Specialization' => __DIR__ . '/../..' . '/app/Models/Specialization.php',
@@ -3282,18 +3291,35 @@ class ComposerStaticInit5947e519b465a0a5e1ca02b706ec90ef
         'Modules\\Assistant\\Http\\Controllers\\AssistantController' => __DIR__ . '/../..' . '/Modules/Assistant/Http/Controllers/AssistantController.php',
         'Modules\\Assistant\\Providers\\AssistantServiceProvider' => __DIR__ . '/../..' . '/Modules/Assistant/Providers/AssistantServiceProvider.php',
         'Modules\\Assistant\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Assistant/Providers/RouteServiceProvider.php',
+        'Modules\\Clinic\\Database\\Seeders\\ClinicDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Clinic/Database/Seeders/ClinicDatabaseSeeder.php',
+        'Modules\\Clinic\\Http\\Controllers\\ClinicController' => __DIR__ . '/../..' . '/Modules/Clinic/Http/Controllers/ClinicController.php',
+        'Modules\\Clinic\\Providers\\ClinicServiceProvider' => __DIR__ . '/../..' . '/Modules/Clinic/Providers/ClinicServiceProvider.php',
+        'Modules\\Clinic\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Clinic/Providers/RouteServiceProvider.php',
+        'Modules\\Clinic\\Transformers\\DoctorClinicResource' => __DIR__ . '/../..' . '/Modules/Clinic/Transformers/DoctorClinicResource.php',
         'Modules\\Doctor\\Database\\Seeders\\DoctorDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Doctor/Database/Seeders/DoctorDatabaseSeeder.php',
+        'Modules\\Doctor\\Http\\Controllers\\AuthDoctorController' => __DIR__ . '/../..' . '/Modules/Doctor/Http/Controllers/AuthDoctorController.php',
+        'Modules\\Doctor\\Http\\Controllers\\DoctorAssistantController' => __DIR__ . '/../..' . '/Modules/Doctor/Http/Controllers/DoctorAssistantController.php',
         'Modules\\Doctor\\Http\\Controllers\\DoctorController' => __DIR__ . '/../..' . '/Modules/Doctor/Http/Controllers/DoctorController.php',
         'Modules\\Doctor\\Providers\\DoctorServiceProvider' => __DIR__ . '/../..' . '/Modules/Doctor/Providers/DoctorServiceProvider.php',
         'Modules\\Doctor\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Doctor/Providers/RouteServiceProvider.php',
+        'Modules\\Doctor\\Transformers\\DoctorAssistantResource' => __DIR__ . '/../..' . '/Modules/Doctor/Transformers/DoctorAssistantResource.php',
+        'Modules\\Doctor\\Transformers\\DoctorResource' => __DIR__ . '/../..' . '/Modules/Doctor/Transformers/DoctorResource.php',
         'Modules\\Patient\\Database\\Seeders\\PatientDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Patient/Database/Seeders/PatientDatabaseSeeder.php',
         'Modules\\Patient\\Http\\Controllers\\PatientController' => __DIR__ . '/../..' . '/Modules/Patient/Http/Controllers/PatientController.php',
         'Modules\\Patient\\Providers\\PatientServiceProvider' => __DIR__ . '/../..' . '/Modules/Patient/Providers/PatientServiceProvider.php',
         'Modules\\Patient\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Patient/Providers/RouteServiceProvider.php',
+        'Modules\\Specialization\\Database\\Seeders\\SeedSpecializationsTableSeeder' => __DIR__ . '/../..' . '/Modules/Specialization/Database/Seeders/SeedSpecializationsTableSeeder.php',
+        'Modules\\Specialization\\Database\\Seeders\\SpecializationDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Specialization/Database/Seeders/SpecializationDatabaseSeeder.php',
+        'Modules\\Specialization\\Http\\Controllers\\SpecializationController' => __DIR__ . '/../..' . '/Modules/Specialization/Http/Controllers/SpecializationController.php',
+        'Modules\\Specialization\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Specialization/Providers/RouteServiceProvider.php',
+        'Modules\\Specialization\\Providers\\SpecializationServiceProvider' => __DIR__ . '/../..' . '/Modules/Specialization/Providers/SpecializationServiceProvider.php',
+        'Modules\\Specialization\\Transformers\\SpecializationResource' => __DIR__ . '/../..' . '/Modules/Specialization/Transformers/SpecializationResource.php',
         'Modules\\User\\Database\\Seeders\\SeedRolePermissionsTableSeeder' => __DIR__ . '/../..' . '/Modules/User/Database/Seeders/SeedRolePermissionsTableSeeder.php',
         'Modules\\User\\Database\\Seeders\\SeedSuperAdminTableSeeder' => __DIR__ . '/../..' . '/Modules/User/Database/Seeders/SeedSuperAdminTableSeeder.php',
         'Modules\\User\\Database\\Seeders\\UserDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/User/Database/Seeders/UserDatabaseSeeder.php',
+        'Modules\\User\\Http\\Controllers\\PasswordController' => __DIR__ . '/../..' . '/Modules/User/Http/Controllers/PasswordController.php',
         'Modules\\User\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/Modules/User/Http/Controllers/UserController.php',
+        'Modules\\User\\Http\\Controllers\\UserDataController' => __DIR__ . '/../..' . '/Modules/User/Http/Controllers/UserDataController.php',
         'Modules\\User\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/User/Providers/RouteServiceProvider.php',
         'Modules\\User\\Providers\\UserServiceProvider' => __DIR__ . '/../..' . '/Modules/User/Providers/UserServiceProvider.php',
         'Monolog\\Attribute\\AsMonologProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php',

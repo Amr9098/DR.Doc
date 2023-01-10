@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('Specialization', SpecializationController::class);
+Route::apiResource('specialization', SpecializationController::class);
