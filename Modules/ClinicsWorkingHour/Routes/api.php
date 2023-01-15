@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Modules\Clinic\Http\Controllers\ClinicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +13,6 @@ use Modules\Clinic\Http\Controllers\ClinicController;
 |
 */
 
-Route::apiResource('doctor-clinic', ClinicController::class);
+Route::middleware('auth:api')->get('/clinicsworkinghour', function (Request $request) {
+    return $request->user();
+});

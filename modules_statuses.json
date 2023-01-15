@@ -4,5 +4,6 @@
     "Assistant": true,
     "Patient": true,
     "Specialization": true,
-    "Clinic": true
+    "Clinic": true,
+    "ClinicsWorkingHour": true
 }

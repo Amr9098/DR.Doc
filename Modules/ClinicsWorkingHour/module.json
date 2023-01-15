@@ -1,0 +1,11 @@
+{
+    "name": "ClinicsWorkingHour",
+    "alias": "clinicsworkinghour",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ClinicsWorkingHour\\Providers\\ClinicsWorkingHourServiceProvider"
+    ],
+    "files": []
+}
