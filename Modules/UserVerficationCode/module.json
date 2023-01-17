@@ -1,0 +1,11 @@
+{
+    "name": "UserVerficationCode",
+    "alias": "userverficationcode",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\UserVerficationCode\\Providers\\UserVerficationCodeServiceProvider"
+    ],
+    "files": []
+}
