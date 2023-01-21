@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Hash;
 
 class PasswordController extends Controller
 {
-
     public function UpdateAuthUserPassword(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'old_password' => 'required',
             'new_password' => [
