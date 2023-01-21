@@ -12,7 +12,7 @@ class twilio{
         $Number = env('Number', '');
         $client = new Client($SID, $Token);
         $client->messages->create(
-            $user->mobile,
+            $user->phone,
             ['from' => $Number, 'body' => ['Hello 😊 , your code is : ' . $otp]]
         );
     }
