@@ -11,6 +11,9 @@ use Modules\Doctor\Transformers\DoctorResource;
 
 class AuthDoctorController extends Controller
 {
+
+
+
     public function AuthDoctorProfile(){
 
         $authDoctorData = Doctor::where("user_id", Auth::id())->first();

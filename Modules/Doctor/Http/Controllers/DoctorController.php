@@ -4,6 +4,7 @@ namespace Modules\Doctor\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Models\User;
+use App\Services\Verification\VerificationCode as VerificationVerificationCode;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
@@ -20,7 +21,12 @@ use Modules\Doctor\Transformers\DoctorResource;
 class DoctorController extends Controller
 {
 
+    public $Verification;
 
+    public function __construct(VerificationVerificationCode $Verification_Code )
+    {
+        $this->Verification=$Verification_Code;
+    }
     /**
      * Display a listing of the resource.
      * @return Renderable
@@ -84,8 +90,11 @@ class DoctorController extends Controller
                     }
                     Doctor::where('id', $addNewDoctor->id)->update(array('image' => $filename));
                 }
+
+              $OTP= $this->Verification->SetVerificationCodeToUser($dUser['id']);
+
                 DB::commit();
-                return response()->json(["message" => "New Doctor Add successfully"], 201);
+                return response()->json(["message" => "New Doctor Add successfully" ,"OTP"=>$OTP], 201);
             } catch (Exception $e) {
                 DB::rollBack();
                 return response()->json(['message' => 'An error occurred while adding a new user', $e], 422);
