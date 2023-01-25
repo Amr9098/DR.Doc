@@ -2,9 +2,9 @@
 
 namespace Modules\Doctor\Http\Controllers;
 
-use App\Http\Services\SMSGateWays\twilio;
 use App\Models\Doctor;
 use App\Models\User;
+use App\Services\SMSGateWays\twilio;
 use App\Services\Verification\VerificationCode as VerificationVerificationCode;
 use Carbon\Carbon;
 use Exception;
@@ -94,7 +94,7 @@ class DoctorController extends Controller
                 }
 
               $OTP= $this->Verification->SetVerificationCodeToUser($dUser['id']);
-              $this->SendSms->SendSms($dUser,$OTP);
+            //   $this->SendSms->SendSms($dUser,$OTP);
 
                 DB::commit();
                 return response()->json(["message" => "New Doctor Add successfully" ,"OTP"=>$OTP], 201);

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Services\SMSGateWays;
+namespace App\Services\SMSGateWays;
 
 class MSG91 {
 
