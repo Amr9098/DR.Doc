@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\User\Http\Controllers\PasswordController;
 use Modules\User\Http\Controllers\UserController;
 use Modules\User\Http\Controllers\UserDataController;
+use Modules\User\Http\Controllers\UserVerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,12 @@ Route::get('logout', [UserController::class,'logout']);
 Route::get('me', [UserController::class,'me']);
 Route::post('user-password', [PasswordController::class,'UpdateAuthUserPassword']);
 Route::post('user-data', [UserDataController::class,'UpdateAuthUserData']);
+
+
+/////////////////////Verification ///////////////
+
+Route::post('send-verification-code-by-phone', [UserVerificationController::class,'SendVerificationCode'])->withoutMiddleware([CheckSuspended::class]);
+
+Route::post('check-otp-by-phone', [UserVerificationController::class,'CheckOTPByPhone'])->withoutMiddleware([CheckSuspended::class]);
+
+
